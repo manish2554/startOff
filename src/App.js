@@ -1,17 +1,11 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./Styles/App.css";
 
 import Navbar from "./Navbar";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-
 import Home from "./Consumer/Home";
-import HomeClient from "./Client/Home";
-import HomeAdmin from "./Admin/Home";
-
 import SignIn from "./auth/SignIn";
 import SignUp from "./auth/SignUp";
-import SignUpAdmin from "./auth/SignUpAdmin";
-import SignUpClient from "./auth/SignUpClient";
 import SignOut from "./auth/SignOut";
 import cart from "./Consumer/cart";
 import ProfileConsum from "./Consumer/ProfileConsum";
@@ -20,7 +14,6 @@ import ProfileAdmin from "./Admin/ProfileAdmin";
 import SettingConsum from "./Consumer/SettingConsum.js";
 import SettingClient from "./Client/SettingClient";
 import SettingAdmin from "./Admin/SettingAdmin";
-import Navfooter from "./footer";
 
 class App extends Component {
   render() {
@@ -29,18 +22,11 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Navbar />
-
             <Switch>
               <Route path="/" exact component={Home} />
-              <Route path="/Home/Client" exact component={HomeClient} />
-              <Route path="/Home/Admin" exact component={HomeAdmin} />
-
               <Route path="/SignIn" component={SignIn} />
-              <Route path="/SignUp" component={SignUp} exact />
-              <Route path="/SignUp/Admin" component={SignUpAdmin} exact />
-              <Route path="/SignUp/Client" component={SignUpClient} exact />
+              <Route path="/SignUp" component={SignUp} />
               <Route path="/SignOut" component={SignOut} />
-
               <Route path="/cart" component={cart} />
               {/* Profiles */}
               <Route path="/Profile/Consumer" component={ProfileConsum} />
@@ -54,7 +40,6 @@ class App extends Component {
             <Route path="/about" component={} />
             <Route path="/contact" component={} /> */}
             </Switch>
-            <Navfooter />
           </div>
         </BrowserRouter>
       </div>
